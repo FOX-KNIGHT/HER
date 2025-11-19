@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Rajshree 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* BASE & RESET */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: #e0e0e0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* BACKGROUND EFFECTS */
+        body::before {
+            content: '';
+            position: fixed;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.12) 0%, transparent 50%);
+            animation: bgShift 12s ease-in-out infinite alternate; /* Slower, smoother animation */
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes bgShift {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(100px, -50px); }
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 12, 41, 0.85);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.15);
+            transition: background 0.3s;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800; /* Bolder logo */
+            background: linear-gradient(135deg, #a855f7, #ec4899, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover { transform: scale(1.05); }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #a0a0a0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            transition: width 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+
+        .nav-links a:hover { color: #fff; }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 40px 40px;
+            position: relative;
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+        }
+
+        .hero-bg {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.1), transparent 70%); /* Soft pink glow */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: float 10s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-55%, -55%) scale(1.05); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 6rem); /* Larger and more impactful */
+            line-height: 1.1;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #a855f7, #ec4899, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% 300%;
+            animation: shimmer 4s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            color: #c0c0c0;
+            margin: 30px 0 50px;
+            font-weight: 300;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 14px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.15);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+            z-index: -1;
+        }
+
+        .btn:hover::before { transform: scaleX(1); }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #a855f7, #ec4899);
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(168, 85, 247, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(168, 85, 247, 0.1);
+            color: #a855f7;
+            border: 2px solid #a855f7;
+            text-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(168, 85, 247, 0.3);
+            transform: translateY(-5px);
+            border-color: #ec4899;
+            color: #ec4899;
+        }
+
+        /* SECTIONS & UTILITIES */
+        .section {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 80px;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* INTRO / SURPRISE SECTION */
+        .surprise {
+            text-align: center;
+            padding: 80px 40px;
+            margin-top: -80px; /* Overlap with hero for smooth transition */
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(168, 85, 247, 0.1));
+            border: 1px solid rgba(236, 72, 153, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+        
+        .surprise h3 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        
+        .surprise p {
+            font-size: 1.1rem;
+            color: #d0d0d0;
+            line-height: 1.8;
+        }
+
+        /* GALLERY */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px; /* Increased gap */
+            margin: 60px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 4/5;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+            background: rgba(48, 43, 99, 0.4);
+            border: 2px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-15px) scale(1.03) rotate(1deg); /* Added subtle rotation */
+            box-shadow: 0 35px 60px rgba(236, 72, 153, 0.4); /* Pinker shadow */
+            border-color: #ec4899;
+        }
+
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(to top, rgba(15, 12, 41, 0.95), transparent 70%); /* Higher gradient fade */
+            padding: 30px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transform: translateY(100%);
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+
+        .gallery-item:hover .gallery-overlay { transform: translateY(0); }
+
+        .gallery-overlay h4 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .gallery-overlay p {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+        }
+
+        /* CARDS / GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(48, 43, 99, 0.7), rgba(48, 43, 99, 0.4));
+            backdrop-filter: blur(15px);
+            padding: 50px;
+            border-radius: 25px;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -20%;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.4), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.5s;
+            border-radius: 50%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.01);
+            border-color: #ec4899;
+            background: linear-gradient(135deg, rgba(48, 43, 99, 0.9), rgba(48, 43, 99, 0.6));
+            box-shadow: 0 25px 50px rgba(236, 72, 153, 0.2);
+        }
+
+        .card:hover::before { opacity: 1; transform: scale(1.2); }
+
+        .card h3 {
+            color: #a855f7;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card p {
+            color: #d0d0d0;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card small { color: #ec4899 !important; font-weight: 600; } /* Highlight click text */
+
+        /* TIMELINE */
+        .timeline {
+            position: relative;
+            padding: 60px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px; /* Thicker line */
+            height: 100%;
+            background: linear-gradient(180deg, #ec4899, #a855f7, rgba(168, 85, 247, 0.1));
+        }
+
+        .timeline-item {
+            margin-bottom: 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px; /* Larger gap */
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(even) { direction: rtl; }
+        .timeline-item:nth-child(even) > * { direction: ltr; }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            border: 4px solid #0f0c29; /* Outer ring for visual pop */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 0 30px rgba(236, 72, 153, 0.6), 0 0 10px rgba(255, 255, 255, 0.5) inset;
+            color: #fff;
+            z-index: 3;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            transition: transform 0.4s;
+        }
+        
+        .timeline-item:hover .timeline-dot {
+            transform: translateX(-50%) translateY(-50%) scale(1.1) rotate(5deg);
+        }
+
+        .timeline-content {
+            background: linear-gradient(135deg, rgba(48, 43, 99, 0.8), rgba(48, 43, 99, 0.5));
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 5px solid #a855f7;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-content:hover {
+            border-color: #ec4899;
+            background: linear-gradient(135deg, rgba(48, 43, 99, 0.9), rgba(48, 43, 99, 0.6));
+            transform: translateX(-15px);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content:hover {
+             transform: translateX(15px);
+        }
+
+        .timeline-content h4 {
+            color: #fff; /* White title for better contrast */
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .timeline-content p {
+            color: #c0c0c0;
+            line-height: 1.7;
+        }
+
+        /* ANIMATION */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, rgba(15, 12, 41, 0.95), rgba(48, 43, 99, 0.6));
+            padding: 80px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(236, 72, 153, 0.15);
+        }
+
+        .footer-text {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #a0a0a0;
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        .footer-sign {
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            margin-top: 30px;
+        }
+        
+        /* MODALS (Simplified for brevity - kept original functionality) */
+        .modal, .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 12, 41, 0.95);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.show, .image-modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, rgba(48, 43, 99, 0.95), rgba(48, 43, 99, 0.8));
+            padding: 50px;
+            border-radius: 25px;
+            max-width: 700px;
+            max-height: 85vh;
+            overflow-y: auto;
+            border: 2px solid rgba(236, 72, 153, 0.4);
+            box-shadow: 0 30px 80px rgba(168, 85, 247, 0.3);
+            animation: slideUp 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+        
+        .modal-header h2 {
+            background: linear-gradient(135deg, #ec4899, #f97316); /* More vibrant title */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.2rem;
+        }
+        
+        .modal-body strong { color: #f97316; } /* Orange highlight */
+
+        /* RESPONSIVENESS */
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            .nav-links { display: none; } /* Hide for mobile simplicity */
+            .section { padding: 60px 20px; }
+            .gallery { gap: 20px; }
+            .timeline::before { left: 30px; }
+            .timeline-item {
+                grid-template-columns: 1fr;
+                margin-left: 80px;
+                gap: 20px;
+            }
+            .timeline-item:nth-child(even) { margin-left: 80px; }
+            .timeline-dot { left: 0; }
+            .timeline-content:hover { transform: translateX(0); }
+            .timeline-item:nth-child(even) .timeline-content:hover { transform: translateX(0); }
+            .hero-actions { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 300px; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">💖 Rajshree</div>
+        <ul class="nav-links">
+            <li><a href="#letters">Letters</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#moments">Moments</a></li>
+            <li><a href="#promise">Promise</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>Happy Birthday, <span class="gradient-text">My Raspberry</span></h1>
+            <p class="hero-subtitle">A celebration of five months, infinite love, and a lifetime of forever</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary" id="confettiBtn">Read My Heart</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})">Our Memories</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="surprise fade-in">
+        <h3>A Little Birthday Note 💌</h3>
+        <p>I know you're reading this far away, but for this one day, let's pretend I'm there with you, holding your hand.</p>
+        <p>This entire site is a virtual hug, filled with our memories, my promises, and my heart. **Scroll down and open the letters, one by one, throughout your beautiful day.**</p>
+    </section>
+    
+    <hr>
+
+    <section class="section" id="letters">
+        <h2 class="section-title">Open Your <span>Letters</span></h2>
+        <p style="text-align: center; color: #b0b0b0; max-width: 700px; margin: 0 auto 60px; line-height: 1.8;">
+            Five special letters, just for you. Click each one to reveal your birthday surprise, Raspberry. 💌
+        </p>
+        <div class="grid">
+            <div class="card fade-in" data-letter-id="1" onclick="openCutout(1)">
+                <h3>🌸 My favorite</h3>
+                <p>"When College Reopened..."</p>
+                <small style="color: #888; display: block; margin-top: 10px;">Click to open ✨</small>
+            </div>
+            <div class="card fade-in" data-letter-id="2" onclick="openCutout(2)">
+                <h3>☀ Answer to your Question</h3>
+                <p>"What You've Been to Me"</p>
+                <small style="color: #888; display: block; margin-top: 10px;">Click to open ✨</small>
+            </div>
+            <div class="card fade-in" data-letter-id="3" onclick="openCutout(3)">
+                <h3>🪔 YOU for ME</h3>
+                <p>"More Than a Girlfriend"</p>
+                <small style="color: #888; display: block; margin-top: 10px;">Click to open ✨</small>
+            </div>
+            <div class="card fade-in" data-letter-id="4" onclick="openCutout(4)">
+                <h3>✨ Forever US</h3>
+                <p>"Five Months of Us"</p>
+                <small style="color: #888; display: block; margin-top: 10px;">Click to open ✨</small>
+            </div>
+            <div class="card fade-in" data-letter-id="5" onclick="openCutout(5)">
+                <h3>🎂 My Special person</h3>
+                <p>"For You, On Your Birthday"</p>
+                <small style="color: #888; display: block; margin-top: 10px;">Click to open ✨</small>
+            </div>
+        </div>
+    </section>
+    
+    <hr>
+
+    <section class="section" id="gallery">
+        <h2 class="section-title">Our <span>Memories</span></h2>
+        <p style="text-align: center; color: #b0b0b0; max-width: 700px; margin: 0 auto 60px; line-height: 1.8;">
+            Every moment captured, every smile treasured. Click to enlarge. 📸
+        </p>
+        <div class="gallery fade-in" id="photoGallery"></div>
+    </section>
+    
+    <hr>
+
+    <section class="section" id="moments">
+        <h2 class="section-title">Five <span>Months</span></h2>
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <h4>🌹 First Flower</h4>
+                    <p>The moment you handed me that first flower—soft and bright as your heart. A promise of what was to come.</p>
+                </div>
+                <div class="timeline-dot">🌹</div>
+            </div>
+            <div class="timeline-item fade-in">
+                <div class="timeline-dot">📚</div>
+                <div class="timeline-content">
+                    <h4>📚 Library Dates</h4>
+                    <p>From midnight texts and internet calls to real stolen moments in the library, real blushing, real hands held close.</p>
+                </div>
+            </div>
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <h4>🌅 Morning Hugs</h4>
+                    <p>We moved from "I wish you were here" to "thank God you're here." From goodnight calls to real good-morning hugs.</p>
+                </div>
+                <div class="timeline-dot">🌅</div>
+            </div>
+            <div class="timeline-item fade-in">
+                <div class="timeline-dot">✨</div>
+                <div class="timeline-content">
+                    <h4>✨ Living Together</h4>
+                    <p>From faraway dreams to living them together. Every milestone built something real, something irreplaceable, something forever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <hr>
+
+    <section class="section" id="promise">
+        <h2 class="section-title">My <span>Promise</span></h2>
+        <div class="grid">
+            <div class="card fade-in">
+                <h3>💝 Every Day</h3>
+                <p>I promise to keep choosing you—every single day, no matter what life brings. You are my daily action, my constant choice, my forever.</p>
+            </div>
+            <div class="card fade-in">
+                <h3>🌈 Through Everything</h3>
+                <p>I promise to love you in joy and sadness, through every version of you, because every side is perfect to me. You are my universe.</p>
+            </div>
+            <div class="card fade-in">
+                <h3>🛡️ Forever Safe</h3>
+                <p>You gave me your heart, and I vow to keep it safe forever. You gave me your love, and I'll never stop deserving it. This is my forever.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-text">
+            <p>✨ May your year overflow with laughter, dreams, and all the happiness you've given me—multiplied by a thousand. ✨</p>
+            <p style="margin-top: 20px; font-style: italic;">Tum meri zindagi ka sabse khoobsurat hissa ho, aur main humesha tumhe usi tarah chahunga. (You are the most beautiful part of my life, and I will always love you that way.)</p>
+        </div>
+        <div class="footer-sign">
+            Five months down… and a lifetime ahead. ♾️<br>
+            Forever yours, Your Pudding ❤️
+        </div>
+    </footer>
+
+    <div id="cutoutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <button class="close-btn" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <div id="imageModal" class="image-modal">
+        <div class="image-modal-content">
+            <button class="image-close-btn" onclick="closeImageModal()">×</button>
+            <img id="modalImage" src="" alt="Full size photo">
+        </div> 
+    </div>
+
+    <script>
+        // --- DATA ---
+        const images = [
+            { src: 'IMG-20251120-WA0004.jpg', title: 'Sweet Smile', desc: 'That beautiful moment', alt: 'Rajshree smiling sweetly.' },
+            { src: 'WhatsApp Image 2025-11-20 at 00.16.38_15fc09c5.jpg', title: 'Our Perfect Day', desc: 'A moment captured from our perfect day.', alt: 'A candid photo of us.' },
+            { src: 'WhatsApp Image 2025-11-20 at 00.16.40_584ca246.jpg', title: 'Beautiful You', desc: 'Radiant as always', alt: 'Rajshree looking beautiful.' },
+            { src: 'IMG-20251120-WA0005.jpg', title: 'Happy Vibes', desc: 'Your joy lights everything', alt: 'A joyful picture of Rajshree.' },
+            { src: 'WhatsApp Image 2025-11-20 at 00.16.47_12e509dd.jpg', title: 'Peaceful Moment', desc: 'Simply perfect', alt: 'A peaceful moment captured.' },
+            { src: 'WhatsApp Image 2025-11-20 at 00.16.36_35b512e6.jpg', title: 'Mirror Moment', desc: 'Captured forever', alt: 'Rajshree taking a mirror selfie.' },
+            { src: 'WhatsApp Image 2025-11-20 at 00.52.07_1978fdc9.jpg', title: 'Class', desc: 'Just Ethnic', alt: 'Rajshree in ethnic wear.' },
+            { src: 'WhatsApp Image 2025-11-20 at 01.02.23_48a2dbd8.jpg', title: 'Ethinic', desc: 'So Gorgeous', alt: 'Rajshree looking gorgeous in ethnic attire.' },
+            { src: 'WhatsApp Image 2025-11-20 at 00.16.49_8410ab0c.jpg', title: 'Bright Smile', desc: 'My favorite view', alt: 'Rajshree with a bright smile.' },
+            { src: 'WhatsApp Image 2025-11-20 at 00.48.54_2a965779.jpg', title: 'Our Chaos', desc: 'Just being us', alt: 'A fun picture of us together.' }
+        ];
+
+        const cutouts = {
+            // ... (Your original cutout content remains the same)
+            1: {
+                title: "🌸 When College Reopened...",
+                content: `
+                    <p><strong>Open this first, right after reading this letter.</strong></p>
+                    <p>This one is where it all began — the moment our story found its rhythm again after the vacation.</p>
+                    <p>Remember that day? You stayed back after class, your eyes shining brighter than the sun, and said, "Let's go to the Staircase."</p>
+                    <p>You made me sit, handed me that long, beautiful letter — my first — and so many gifts.</p>
+                    <p>That moment, Raspberry, wasn't just a surprise… it was magic.</p>
+                    <p>That's where I realized — you don't just love with words, you love with actions.</p>
+                    <p>So open that first cutout and relive that day with me. 💌</p>
+                `
+            },
+            2: {
+                title: "☀ What You've Been to Me",
+                content: `
+                    <p><strong>Open this one in the middle of your birthday day, maybe around afternoon when you're smiling and thinking of me (which, let's be honest, you'll be 😋).</strong></p>
+                    <p>This one's all about you — the one who calls me to talk more, stays after college to spend more time, matches her clothes with mine, and even makes me breakfast because she can't stand me skipping meals.</p>
+                    <p>It's my little reminder of how deeply you care, how you turn ordinary days into warmth. ☀</p>
+                `
+            },
+            3: {
+                title: "🪔 More Than a Girlfriend — My Family, My Home",
+                content: `
+                    <p><strong>Open this in the evening, when the day slows down and you feel peaceful.</strong></p>
+                    <p>This one is different — it's not about what you do, but about who you are.</p>
+                    <p>Because you've already made me part of your family.</p>
+                    <p>You do the rituals for me, treat me as your own, and made me realize — I don't just have a girlfriend, I have a home.</p>
+                    <p>This letter will remind you that you are my calm, my belonging, my heart's safe space. 💫</p>
+                `
+            },
+            4: {
+                title: "✨ Five Months of Us",
+                content: `
+                    <p><strong>Open this one at night, maybe before bed, when everything's quiet.</strong></p>
+                    <p>It's our story — the five chapters we've written so far.</p>
+                    <p>From our first flower and library date, to our long-distance days, to every silly prank and late-night call.</p>
+                    <p>From "I wish you were here" to "Thank God you are here."</p>
+                    <p>This letter is a thank-you for surviving every distance and choosing me every day.</p>
+                    <p>It's about us — our chaos, our comfort, our forever kind of love. ♾</p>
+                `
+            },
+            5: {
+                title: "🎂 For You, On Your Birthday",
+                content: `
+                    <p><strong>This one… save it for the end. 💝 This one comes with a special surprise when you close it!</strong></p>
+                    <p>When the candles are out, the lights are low, and it's just you — my Raspberry — sitting with the letters around you.</p>
+                    <p>Open this one last, because it's my purest wish —</p>
+                    <p>for your happiness, your dreams, your peace, and our endless "forever."</p>
+                    <p>It's my promise that no matter how many birthdays come and go,</p>
+                    <p>you'll always be my favorite celebration. 🎂💗</p>
+                    <br>
+                    <p><em>Each letter is a part of me,<br>
+                    each word — a heartbeat,<br>
+                    each memory — a reminder that we were meant to find each other.</em></p>
+                    <br>
+                    <p>Read them slowly, feel them deeply,</p>
+                    <p>and keep them close — because every page carries us.</p>
+                    <br>
+                    <p style="color: #ec4899;">You're my laughter, my calm, my universe, my forever girl.</p>
+                    <p>You gave me love, care, belonging, and myself back — and I'll spend every tomorrow making sure you never forget how precious you are to me.</p>
+                `
+            }
+        };
+
+
+        // --- GALLERY SETUP ---
+        const gallery = document.getElementById('photoGallery');
+        images.forEach((img, idx) => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item fade-in';
+            item.onclick = () => openImage(idx);
+            item.innerHTML = `
+                <img src="${img.src}" alt="${img.alt || img.title}">
+                <div class="gallery-overlay">
+                    <h4>${img.title}</h4>
+                    <p>${img.desc}</p>
+                </div>
+            `;
+            gallery.appendChild(item);
+        });
+        
+        // --- MODAL FUNCTIONS ---
+        let currentLetterId = null;
+
+        function openCutout(num) {
+            currentLetterId = num;
+            const modal = document.getElementById('cutoutModal');
+            const title = document.getElementById('modalTitle');
+            const body = document.getElementById('modalBody');
+            
+            title.innerHTML = cutouts[num].title;
+            body.innerHTML = cutouts[num].content;
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+            
+            // Mark the card as 'read' or visually change it if needed (optional future enhancement)
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('cutoutModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+            
+            // CONGRATULATIONS/CONFIRTTI TRIGGER: Only trigger on closing the 5th letter
+            if (currentLetterId === 5) {
+                shootConfetti(0.8);
+            }
+            currentLetterId = null;
+        }
+        
+        function openImage(idx) {
+            const modal = document.getElementById('imageModal');
+            const img = document.getElementById('modalImage');
+            img.src = images[idx].src;
+            img.alt = images[idx].alt || images[idx].title;
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // --- CONFETTI FUNCTION ---
+        function shootConfetti(startVelocity = 30) {
+             confetti({
+                particleCount: 150,
+                startVelocity: startVelocity,
+                spread: 120,
+                origin: { y: 0.8 },
+                colors: ['#a855f7', '#ec4899', '#f97316', '#ffffff']
+            });
+        }
+        
+        // Event Listener for the "Read My Heart" button
+        document.getElementById('confettiBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Start a small blast and scroll down
+            shootConfetti(40); 
+            document.getElementById('letters').scrollIntoView({behavior: 'smooth'});
+        });
+
+
+        // --- UI & ACCESSIBILITY LISTENERS (Unchanged but cleaned) ---
+        document.addEventListener('click', function(e) {
+            const cutoutModal = document.getElementById('cutoutModal');
+            const imageModal = document.getElementById('imageModal');
+            if (e.target === cutoutModal) closeModal();
+            if (e.target === imageModal) closeImageModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeImageModal();
+            }
+        });
+
+        // --- INTERSECTION OBSERVER (Fade-in on scroll) ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Ensure element is visible on load if already in viewport
+                if (entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight) { 
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // --- SMOOTH SCROLL FOR NAV ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // --- STICKY NAV BACKGROUND ---
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(15, 12, 41, 0.95)';
+            } else {
+                nav.style.background = 'rgba(15, 12, 41, 0.85)';
+            }
+        });
+    </script>
+</body>
+</html>
